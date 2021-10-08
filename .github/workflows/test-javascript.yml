@@ -2,7 +2,8 @@ name: Test Javascript
 on:
   push:
     paths:
-      - javascript
+      - .github/workflows/test-javascript.yml
+      - javascript/**
 jobs:
   Test-Project:
     runs-on: ubuntu-latest
