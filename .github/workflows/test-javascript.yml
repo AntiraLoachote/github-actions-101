@@ -1,5 +1,4 @@
-name: Tset Javascript
-
+name: Test Javascript
 on:
   push:
     paths:
