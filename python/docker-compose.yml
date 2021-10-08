@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+    python:
+        image: python:3.9
+        volumes:
+            -   type: bind
+                source: .
+                target: /app
+        working_dir: /app
+        command: |
+            python -m unittest
