@@ -1,0 +1,20 @@
+name: Test Javascript
+on:
+  push:
+    paths:
+      - .github/workflows/test-javascript.yml
+      - javascript/**
+jobs:
+  Test-Project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          cd javascript
+          yarn install
+      - name: Test
+        run: |
+          cd javascript
+          yarn test

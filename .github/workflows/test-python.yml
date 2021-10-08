@@ -1,23 +1,22 @@
 name: Test Python
 
-on: push
+on: 
+  push:
+    paths:
+      - .github/workflows/test-python.yml
+      - python/**
+  pull_request:
+    paths:
+      - .github/workflows/test-python.yml
+      - python/**
 
 jobs:
-  run_test:
+  test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: python
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-
-      - name: install dependencies
-        run: pip install -r requirements.txt
-
-      - name: run tests
-        run: python -m pytest
-
+      - name: Chekcout code
+        uses: actions/checkout@v2
+      - name: Test
+        run: |
+          cd python
+          python -m unittest
