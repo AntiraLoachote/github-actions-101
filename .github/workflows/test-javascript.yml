@@ -1,5 +1,8 @@
 name: Tset Javascript
-on: [push]
+on:
+  push:
+    paths:
+      - .github/workflows/test-javascript.yml
 jobs:
   Test-Project:
     runs-on: ubuntu-latest
