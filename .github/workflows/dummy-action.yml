@@ -1,0 +1,7 @@
+name: Dummy Action
+on: [push]
+jobs:
+  Simple-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Run dummy action"
